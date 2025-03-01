@@ -393,3 +393,6 @@ const About = () => {
     </div>
   </section>
 </div>
+);
+};
+export default About;
