@@ -37,7 +37,7 @@ const About = () => {
       id: 5,
       name: 'Rebecca Nantongo',
       role: 'Volunteer Coordinator',
-      bio: 'Rebecca coordinates our volunteer programs, matching volunteers' skills with our projects' needs. She has a background in human resources and community engagement.',
+      bio: 'Rebecca coordinates our volunteer programs, matching volunteers\' skills with our projects\' needs. She has a background in human resources and community engagement.',
       image: '/team/rebecca.jpg'
     },
     {
@@ -290,7 +290,7 @@ const About = () => {
               <Link to="/our-work" className="btn btn-light">
                 Learn More About Our Programs
               </Link>
-              <a href="/impact-report-2024.pdf" className="btn btn-outline-light" target="_blank">
+              <a href="/impact-report-2024.pdf" className="btn btn-outline-light" target="_blank" rel="noopener noreferrer">
                 Download Impact Report
               </a>
             </div>
@@ -308,8 +308,9 @@ const About = () => {
           
           <div className="partners-grid">
             {partners.map(partner => (
-              <div className="partner-logo" key={partner.id}>
-                <img src={partner.logo} alt={partner.name} />
+              <div className="partner-card" key={partner.id}>
+                <img src={partner.logo} alt={partner.name} className="partner-logo" />
+                <div className="partner-name">{partner.name}</div>
               </div>
             ))}
           </div>
@@ -338,7 +339,7 @@ const About = () => {
             </p>
             
             <div className="reports-grid">
-              <a href="/reports/annual-report-2024.pdf" className="report-card" target="_blank">
+              <a href="/reports/annual-report-2024.pdf" className="report-card" target="_blank" rel="noopener noreferrer">
                 <div className="report-icon">
                   <i className="far fa-file-pdf"></i>
                 </div>
@@ -346,7 +347,7 @@ const About = () => {
                 <span className="report-link">Download PDF</span>
               </a>
               
-              <a href="/reports/financial-statement-2024.pdf" className="report-card" target="_blank">
+              <a href="/reports/financial-statement-2024.pdf" className="report-card" target="_blank" rel="noopener noreferrer">
                 <div className="report-icon">
                   <i className="far fa-file-pdf"></i>
                 </div>
@@ -354,7 +355,7 @@ const About = () => {
                 <span className="report-link">Download PDF</span>
               </a>
               
-              <a href="/reports/annual-report-2023.pdf" className="report-card" target="_blank">
+              <a href="/reports/annual-report-2023.pdf" className="report-card" target="_blank" rel="noopener noreferrer">
                 <div className="report-icon">
                   <i className="far fa-file-pdf"></i>
                 </div>
@@ -362,37 +363,35 @@ const About = () => {
                 <span className="report-link">Download PDF</span>
               </a>
               
-              <a href="/reports/financial-statement-2023.pdf" className="report-card" target="_blank">
+              <a href="/reports/financial-statement-2023.pdf" className="report-card" target="_blank" rel="noopener noreferrer">
                 <div className="report-icon">
                   <i className="far fa-file-pdf"></i>
                 </div>
-                      <div className="partners-grid">
-        {partners.map(partner => (
-          <div className="partner-card" key={partner.id}>
-            <img src={partner.logo} alt={partner.name} className="partner-logo" />
-            <div className="partner-name">{partner.name}</div>
+                <h3>Financial Statement 2023</h3>
+                <span className="report-link">Download PDF</span>
+              </a>
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
+        </div>
+      </section>
 
-  {/* Call to Action Section */}
-  <section className="cta-section">
-    <div className="container">
-      <h2>Join Us in Making a Difference</h2>
-      <p>Become a part of the movement to transform lives and communities.</p>
-      <div className="cta-buttons">
-        <Link to="/get-involved" className="btn btn-primary">
-          Get Involved
-        </Link>
-        <Link to="/donate" className="btn btn-secondary">
-          Donate Now
-        </Link>
-      </div>
+      {/* Call to Action Section */}
+      <section className="cta-section">
+        <div className="container">
+          <h2>Join Us in Making a Difference</h2>
+          <p>Become a part of the movement to transform lives and communities.</p>
+          <div className="cta-buttons">
+            <Link to="/get-involved" className="btn btn-primary">
+              Get Involved
+            </Link>
+            <Link to="/donate" className="btn btn-secondary">
+              Donate Now
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
-</div>
-);
+  );
 };
+
 export default About;
